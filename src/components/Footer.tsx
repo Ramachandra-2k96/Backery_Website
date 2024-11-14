@@ -3,64 +3,64 @@ import { Instagram, Facebook, Twitter, Mail, MapPin, Phone } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-amber-900 text-white">
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+    <footer className="text-white bg-amber-900">
+      <div className="container px-4 py-16 mx-auto">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div>
-            <h3 className="text-2xl font-bold mb-6">Visit Us</h3>
-            <div className="flex items-start gap-4 mb-4">
-              <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
-              <p>123 Bakery Street<br />New York, NY 10001</p>
+            <h3 className="mb-6 text-2xl font-bold">Visit Us</h3>
+            <div className="flex gap-4 items-start mb-4">
+              <MapPin className="flex-shrink-0 mt-1 w-5 h-5" />
+              <p>Katpadi, Near NH 66<br />Udupi, Karnataka 576226</p>
             </div>
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex gap-4 items-center mb-4">
               <Phone className="w-5 h-5" />
-              <p>(555) 123-4567</p>
+              <p>8877669900</p>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex gap-4 items-center">
               <Mail className="w-5 h-5" />
               <p>hello@artisanbakery.com</p>
             </div>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-6">Hours</h3>
+            <h3 className="mb-6 text-2xl font-bold">Hours</h3>
             <p className="mb-2">Mon - Fri: 7am - 7pm</p>
             <p className="mb-2">Saturday: 8am - 8pm</p>
             <p>Sunday: 8am - 6pm</p>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-6">Newsletter</h3>
+            <h3 className="mb-6 text-2xl font-bold">Newsletter</h3>
             <p className="mb-4">Subscribe for updates and special offers</p>
             <form className="flex gap-2">
               <input
                 type="email"
                 placeholder="Your email"
-                className="px-4 py-2 rounded-lg bg-white/10 focus:bg-white/20 transition-colors duration-300 outline-none flex-grow"
+                className="flex-grow px-4 py-2 rounded-lg transition-colors duration-300 outline-none bg-white/10 focus:bg-white/20"
               />
-              <button className="px-6 py-2 bg-amber-500 hover:bg-amber-600 rounded-lg transition-colors duration-300">
+              <button className="px-6 py-2 bg-amber-500 rounded-lg transition-colors duration-300 hover:bg-amber-600">
                 Join
               </button>
             </form>
           </div>
 
           <div>
-            <h3 className="text-2xl font-bold mb-6">Follow Us</h3>
+            <h3 className="mb-6 text-2xl font-bold">Follow Us</h3>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-amber-500 transition-colors duration-300">
+              <a href="#" className="transition-colors duration-300 hover:text-amber-500">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="hover:text-amber-500 transition-colors duration-300">
+              <a href="#" className="transition-colors duration-300 hover:text-amber-500">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="hover:text-amber-500 transition-colors duration-300">
+              <a href="#" className="transition-colors duration-300 hover:text-amber-500">
                 <Twitter className="w-6 h-6" />
               </a>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-white/20 mt-12 pt-8 text-center">
+        <div className="pt-8 mt-12 text-center border-t border-white/20">
           <p>&copy; 2024 Artisan Bakery. All rights reserved.</p>
         </div>
       </div>

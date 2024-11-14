@@ -8,45 +8,46 @@ const products = [
     id: 1,
     name: 'Artisan Sourdough',
     description: 'Naturally fermented for 24 hours with our century-old starter',
-    price: 8.99,
+    price: 300,
     image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800'
   },
   {
     id: 2,
     name: 'Butter Croissants',
     description: 'Flaky, buttery layers made with French butter',
-    price: 4.99,
+    price: 150,
     image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800'
   },
   {
     id: 3,
     name: 'Chocolate Danish',
     description: 'Filled with rich Belgian chocolate and almond cream',
-    price: 5.99,
+    price: 200,
     image: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?auto=format&fit=crop&w=800'
   },
   {
     id: 4,
     name: 'Rustic Baguette',
     description: 'Traditional French recipe with crispy crust',
-    price: 6.99,
+    price: 180,
     image: 'https://images.unsplash.com/photo-1568471173242-461f0a730452?auto=format&fit=crop&w=800'
   },
   {
     id: 5,
     name: 'Cinnamon Rolls',
     description: 'Soft, fluffy rolls with premium Ceylon cinnamon',
-    price: 3.99,
-    image: 'https://images.unsplash.com/photo-1509365390695-33acd7879a95?auto=format&fit=crop&w=800'
+    price: 120,
+    image: 'https://i.pinimg.com/originals/a6/5d/1a/a65d1a30a15aa02ef8c35343ed2e58e7.jpg'
   },
   {
     id: 6,
     name: 'Artisan Cookies',
     description: 'Handcrafted cookies with premium ingredients',
-    price: 2.99,
+    price: 100,
     image: 'https://images.unsplash.com/photo-1612203985729-70726954388c?auto=format&fit=crop&w=800'
   }
 ];
+
 
 export default function Marketplace() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
@@ -60,7 +61,7 @@ export default function Marketplace() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-b from-amber-50 to-amber-100">
+    <div className="pt-24 pb-16 min-h-screen bg-gradient-to-b from-amber-50 to-amber-100">
       <div className="container px-4 mx-auto">
         <h1 className="mb-12 text-5xl font-extrabold text-center text-gray-800">Our Products</h1>
         
@@ -72,7 +73,7 @@ export default function Marketplace() {
               delay={index * 100}
             >
               <motion.div
-                className="relative overflow-hidden bg-white shadow-lg group rounded-2xl"
+                className="overflow-hidden relative bg-white rounded-2xl shadow-lg group"
                 whileHover={{ y: -8, scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 200, damping: 15 }}
               >
@@ -87,12 +88,12 @@ export default function Marketplace() {
                 <div className="p-6">
                   <h3 className="mb-2 text-2xl font-bold text-gray-800">{product.name}</h3>
                   <p className="mb-4 text-gray-500">{product.description}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-3xl font-bold text-amber-600">${product.price}</span>
+                  <div className="flex justify-between items-center">
+                    <span className="text-3xl font-bold text-amber-600">₹{product.price}</span>
                     <motion.button
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-6 py-2 text-white transition-colors duration-300 rounded-lg bg-amber-600 hover:bg-amber-700"
+                      className="px-6 py-2 text-white bg-amber-600 rounded-lg transition-colors duration-300 hover:bg-amber-700"
                       onClick={() => setSelectedProduct(product)}
                     >
                       Buy Now
@@ -111,16 +112,16 @@ export default function Marketplace() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            className="flex fixed inset-0 z-50 justify-center items-center p-4 backdrop-blur-sm bg-black/60"
             onClick={(e) => e.target === e.currentTarget && setSelectedProduct(null)}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="w-full max-w-lg p-8 transition-transform transform bg-white shadow-xl rounded-2xl"
+              className="p-8 w-full max-w-lg bg-white rounded-2xl shadow-xl transition-transform transform"
             >
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex justify-between items-center mb-6">
                 <h3 className="text-3xl font-bold text-gray-800">{selectedProduct.name}</h3>
                 <button
                   onClick={() => setSelectedProduct(null)}
@@ -133,7 +134,7 @@ export default function Marketplace() {
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
-                className="object-cover w-full mb-6 rounded-lg shadow-md h-60"
+                className="object-cover mb-6 w-full h-60 rounded-lg shadow-md"
               />
               
               <div className="mb-6">
@@ -145,21 +146,21 @@ export default function Marketplace() {
                   min="1"
                   value={quantity}
                   onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value) || 1))}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                  className="px-4 py-2 w-full rounded-lg border border-gray-300 focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                 />
               </div>
               
-              <div className="flex items-center justify-between mb-8">
+              <div className="flex justify-between items-center mb-8">
                 <span className="text-lg text-gray-600">Total:</span>
                 <span className="text-3xl font-bold text-amber-600">
-                  ${(selectedProduct.price * quantity).toFixed(2)}
+                ₹{(selectedProduct.price * quantity).toFixed(2)}
                 </span>
               </div>
               
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full py-3 text-white transition-colors duration-300 rounded-lg bg-amber-600 hover:bg-amber-700"
+                className="py-3 w-full text-white bg-amber-600 rounded-lg transition-colors duration-300 hover:bg-amber-700"
                 onClick={handleOrder}
               >
                 Confirm Order
@@ -173,7 +174,7 @@ export default function Marketplace() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            className="fixed px-8 py-4 text-lg font-semibold text-white transform -translate-x-1/2 bg-green-500 rounded-lg shadow-xl bottom-8 left-1/2"
+            className="fixed bottom-8 left-1/2 px-8 py-4 text-lg font-semibold text-white bg-green-500 rounded-lg shadow-xl transform -translate-x-1/2"
           >
             🎉 Order Complete! Thank you for your purchase.
           </motion.div>
