@@ -11,7 +11,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center gap-2">
             <ChefHat className="w-8 h-8 text-amber-500" />
-            <span className="text-xl font-bold">Artisan Bakery</span>
+            <span className="text-xl font-bold">Pooja Bakery</span>
           </Link>
 
           <div className="flex items-center gap-6">
